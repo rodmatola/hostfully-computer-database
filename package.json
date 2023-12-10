@@ -4,13 +4,14 @@
   "description": "Hostfully exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run"
   },
   "author": "Rodrigo Matola",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@faker-js/faker": "^8.3.1",
     "cypress": "^13.6.1",
     "cypress-plugin-steps": "^1.1.1",
     "eslint-plugin-cypress": "^2.15.1",
