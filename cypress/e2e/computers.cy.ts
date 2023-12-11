@@ -31,7 +31,7 @@ describe('Computer database', () => {
     })
   })
 
-  it.only('deletes a computer', () => {
+  it('deletes a computer', () => {
     cy.step('And I have a number of computers found')
     cy.get(computersListPage.computersFound).invoke('text').as('computersBefore')
 
