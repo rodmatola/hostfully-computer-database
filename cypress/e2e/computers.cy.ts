@@ -1,5 +1,5 @@
 import { computersListPage, addNewComputerPage, editComputerPage } from "../support/pageElements/computerDatabase.elements"
-import { computerInfo } from "../fixtures/computerInfo"
+import { computerRandomInfo } from "../fixtures/computerRandomInfo"
 import { ComputerInfo } from "../support/types/ComputerInfo"
 
 describe('Computer database', () => {
@@ -14,7 +14,7 @@ describe('Computer database', () => {
 
     cy.step('When I add a new computer')
     cy.get(computersListPage.addNewComputerBtn).click()
-    cy.fillNewComputer(computerInfo as ComputerInfo)
+    cy.fillComputerInfo(computerRandomInfo as ComputerInfo)
     cy.get(addNewComputerPage.createComputerBtn).click()
 
     cy.step('Then I should see an addition success message')
@@ -51,8 +51,20 @@ describe('Computer database', () => {
         expect(computersAfter).to.equal(computersBefore - 1)
       })
     })
-
   })
 
+  it('edits a computer', () => {
+    cy.step('And enter a computer details page')
+    cy.get(computersListPage.tableComputers).first().click()
 
+    cy.step('When I edit a field')
+
+
+    cy.step('Then I should see an update successful message')
+
+
+    cy.step('And the new value displayed')
+
+
+  })
 })
