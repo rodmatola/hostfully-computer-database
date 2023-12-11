@@ -1,4 +1,4 @@
-import { computersListPage, addNewComputerPage } from "../support/pageElements/computerDatabase.elements"
+import { computersListPage, addNewComputerPage, editComputerPage } from "../support/pageElements/computerDatabase.elements"
 import { computerInfo } from "../fixtures/computerInfo"
 import { ComputerInfo } from "../support/types/ComputerInfo"
 
@@ -30,4 +30,29 @@ describe('Computer database', () => {
       })
     })
   })
+
+  it('deletes a computer', () => {
+    cy.step('And I have a number of computers found')
+    cy.get(computersListPage.computersFound).invoke('text').as('computersBefore')
+
+    cy.step('When I delete a computer')
+    cy.get(computersListPage.tableComputers).first().click()
+    cy.get(editComputerPage.deleteComputerBtn).click()
+
+    cy.step('Then I should see a deletion success message')
+    cy.get(computersListPage.alertMessage).should('contain', 'deleted')
+
+    cy.step('And the number of computers found should be decreased by 1')
+    cy.get(computersListPage.computersFound).invoke('text').then(text => {
+      let computersAfter = parseInt(text.toString().split(' ')[0])
+
+      cy.get('@computersBefore').then(text => {
+        let computersBefore = parseInt(text.toString().split(' ')[0])
+        expect(computersAfter).to.equal(computersBefore - 1)
+      })
+    })
+
+  })
+
+
 })
