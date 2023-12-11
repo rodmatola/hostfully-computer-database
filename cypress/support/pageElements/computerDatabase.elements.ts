@@ -4,7 +4,8 @@ export const computersListPage = {
   filterBtn: '#searchsubmit',
   addNewComputerBtn: '#add',
   alertMessage: '.alert-message',
-  tableComputers: 'tbody > tr > td > a'
+  tableComputers: 'table',
+  tableComputerNames: 'tbody > tr > td > a'
 };
 
 export const computerInfoForm = {
@@ -23,6 +24,6 @@ export const addNewComputerPage = {
 export const editComputerPage = {
   computerInfo: computerInfoForm,
   deleteComputerBtn: '[class="btn danger"]',
-  saveComputerBtn: '[type="submit"]',
+  saveComputerBtn: '[class="btn primary"]',
   cancelBtn: 'a.btn'
 }
