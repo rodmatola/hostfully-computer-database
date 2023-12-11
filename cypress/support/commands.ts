@@ -13,10 +13,10 @@ declare global {
 }
 
 Cypress.Commands.add('fillComputerInfo', (info) => {
-  cy.get(addNewComputerPage.computerInfo.computerNameField).type(info.computerName)
-  cy.get(addNewComputerPage.computerInfo.introducedField).type(info.introduced)
-  cy.get(addNewComputerPage.computerInfo.discontinuedField).type(info.discontinued)
-  cy.get(addNewComputerPage.computerInfo.companyDropDown).select(info.companyIndex)
+  cy.get(addNewComputerPage.computerInfo.computerNameField).clear().type(info.computerName)
+  cy.get(addNewComputerPage.computerInfo.introducedField).clear().type(info.introduced)
+  cy.get(addNewComputerPage.computerInfo.discontinuedField).clear().type(info.discontinued)
+  cy.get(addNewComputerPage.computerInfo.companyDropDown).select(info.company)
 })
 
 // Cypress.Commands.add('computersBeforeAndAfter', (computersBefore, computersAfter) => {
