@@ -12,8 +12,8 @@ declare global {
 }
 
 Cypress.Commands.add('fillNewComputer', (info) => {
-  cy.get(addNewComputerPage.computerNameField).type(info.computerName)
-  cy.get(addNewComputerPage.introducedField).type(info.introduced)
-  cy.get(addNewComputerPage.discontinuedField).type(info.discontinued)
-  cy.get(addNewComputerPage.companyDropDown).select(info.companyIndex)
+  cy.get(addNewComputerPage.computerInfo.computerNameField).type(info.computerName)
+  cy.get(addNewComputerPage.computerInfo.introducedField).type(info.introduced)
+  cy.get(addNewComputerPage.computerInfo.discontinuedField).type(info.discontinued)
+  cy.get(addNewComputerPage.computerInfo.companyDropDown).select(info.companyIndex)
  })
