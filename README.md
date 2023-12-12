@@ -1,5 +1,8 @@
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/05e59f07/hostfully)
+
 # Hostfully QA Engineer Cypress exercise
 
+This repository contains a resolution for Hostfully QA Engineer Cypress exercise.
 
 ## Running the project
 
@@ -101,4 +104,35 @@ Some issues found on website during exploratory tests were registered on this [r
 1. Xvfb is missing on devcontainer/codespace config. Tests will not run
 1. Didn't test devcontainer locally (poor machine)
 
+## Other repository configs
+
+### GitHub Super Linter
+
+GitHub Super-Linter is a ready-to-run collection of linters and code analyzers, to help validate your source code.
+
+The goal of super-linter is to help you establish best practices and consistent formatting across multiple programming languages, and ensure developers are adhering to those conventions.
+
+In this repository it is set to [TypeScript ESLint](https://eslint.org/), [JSCPD](https://www.npmjs.com/package/jscpd) and [Gitleaks](https://github.com/gitleaks/gitleaks)
+
+### Dependabot
+
+[Dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot) is a tool that helps developers keep their project dependencies up to date by automatically checking for and creating pull requests to update dependencies when new versions are released.
+
+If Dependabot finds a vulnerability in a package you depend on, it sends you an alert. If it can suggest a fix, it also sends a pull request to update your dependency manifest with the closest non-vulnerable version.
+
+In this repo is set to check NPM packages and GitHub Actions
+
+### Pull Request Template
+
+Just a template to keep a pattern for what to write in a pull request
+
+### Percy
+
+Percy is a Visual Regression tool. In this repository is set just with the basic configuration.
+
+To check the comparisons, visit <https://percy.io/05e59f07/hostfully>
+
+### Axe
+
+A tool to run accessibility checks. In this repository is set just with the basic configuration
 

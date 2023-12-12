@@ -1,22 +1,25 @@
 import { computersListPage } from "../support/pageElements/computerDatabase.elements"
 
-describe('Computer database Visual Regression', () => {
+describe('Computer database accessibility', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.injectAxe()
   })
 
-  it('verifies computers page', () => {
+  it('verifies computers page a11y', () => {
     cy.get(computersListPage.computersFound).should('be.visible')
-    cy.percySnapshot()
+    cy.checkA11y()
   })
 
-  it('verifies adds a new computer page', () => {
+  it('verifies adds a new computer page a11y', () => {
     cy.get(computersListPage.addNewComputerBtn).click()
-    cy.percySnapshot()
+    cy.injectAxe()
+    cy.checkA11y()
   })
 
-  it('verifies delete a computer page', () => {
+  it('verifies delete a computer page a11y', () => {
     cy.get(computersListPage.tableComputerNames).first().click()
-    cy.percySnapshot()
+    cy.injectAxe()
+    cy.checkA11y()
   })
 })
