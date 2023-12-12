@@ -104,7 +104,7 @@ Some issues found on website during exploratory tests were registered on this [r
 1. Xvfb is missing on devcontainer/codespace config. Tests will not run
 1. Didn't test devcontainer locally (poor machine)
 
-## Other repository configs
+## Other repository tools
 
 ### GitHub Super Linter
 
@@ -141,3 +141,17 @@ To check the comparisons, visit <https://percy.io/05e59f07/hostfully>
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) is an open-source, automated tool for improving the performance, quality, and correctness of your web apps. 
 
 When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
+
+### ESLint, Editorconfig, Commitlint
+
+Tools to guarantee a format pattern to the development. Links to their docs:
+- [ESLint](https://eslint.org/)
+- [Editorconfig](https://editorconfig.org/)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
+
+## Decision log
+
+- Since was asked just to write scenarios in Gherkin, I choose to not use Cucumber and use [cypress-steps](https://github.com/filiphric/cypress-plugin-steps) plugin. I always choose to not use Cucumber...
+- Since it is not recommended the use of Page Objects with Cypress, I mapped the elements in a file `pageElements.ts` just for organization, in case of chages, just change in one place. Also, I prefer not to use Page Objects. I like [Screenplay pattern](https://serenity-js.org/handbook/design/screenplay-pattern/) better, but I don't use frameworks for that.
+- The tools described on section above are my "default tools" to test automation in JS/TS.
+
