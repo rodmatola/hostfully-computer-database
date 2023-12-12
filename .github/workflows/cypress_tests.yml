@@ -45,3 +45,23 @@ jobs:
           name: cypress_videos
           path: cypress_videos.zip
           retention-days: 15
+
+      - name: Lighthouse
+        if: always()
+        run: |
+          npm install -g lighthouse
+          lighthouse https://computer-database.gatling.io/computers --chrome-flags="--headless --window-size=1920,1080"
+          lighthouse https://computer-database.gatling.io/computers/new --chrome-flags="--headless --window-size=1920,1080"
+          lighthouse https://computer-database.gatling.io/computers/301 --chrome-flags="--headless --window-size=1920,1080"
+
+      - name: Zip Lighthouse reports
+        if: always()
+        run: zip -r lighthouse_reports.zip *.html
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse_reports
+          path: lighthouse_reports.zip
+          retention-days: 15
