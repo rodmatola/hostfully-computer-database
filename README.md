@@ -134,5 +134,10 @@ To check the comparisons, visit <https://percy.io/05e59f07/hostfully>
 
 ### Axe
 
-A tool to run accessibility checks. In this repository is set just with the basic configuration
+[Axe](https://www.deque.com/axe/) is a tool to run accessibility checks. In this repository is set just with the basic configuration
 
+### Ligthouse
+
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) is an open-source, automated tool for improving the performance, quality, and correctness of your web apps. 
+
+When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
